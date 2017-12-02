@@ -1,4 +1,6 @@
-const listCtrl = (state = [], action) => {
+const initState = []
+
+export const listCtrl = (state = initState, action) => {
   switch (action.type) {
     case 'DATA_FETCH':
       return [
@@ -14,5 +16,3 @@ const listCtrl = (state = [], action) => {
       return state
   }
 }
-
-export default listCtrl
