@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import './index.css'
-import Router from './views/Router'
+import App from './views/App'
 
 import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<Router />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
 registerServiceWorker()
