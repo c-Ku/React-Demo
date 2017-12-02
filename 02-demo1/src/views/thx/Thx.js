@@ -33,7 +33,6 @@ class Description extends React.PureComponent {
 }
 
 const mapStateToProps = state => {
-  console.log(state)
   return {
     list: state.listCtrl,
   }
