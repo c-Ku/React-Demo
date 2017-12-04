@@ -7,8 +7,8 @@ export const check = (state = initState, action) => {
       state = 'true'
       break
     case 'CHECK_CLEAN':
-    window.localStorage.setItem('check', false)
-    state = 'false'
+      window.localStorage.setItem('check', false)
+      state = 'false'
       break
     default:
       return state

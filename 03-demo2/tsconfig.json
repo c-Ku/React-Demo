@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "jsx": "react",
+    "rootDir": "./",
+    "outDir": "./dist/",
+    "watch": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs"
+  },
+  "exclude": ["webpack.config.js", "node_modules", "dist", "packages"],
+  "compileOnSave": true,
+  "include": ["./src/**/*"]
+}
+

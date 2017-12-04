@@ -1,10 +1,10 @@
-/* eslint-disabled */
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { actions } from '../../redux/actions/'
-
 import request from '../../utils/request'
+import { actions } from '../../redux/actions/'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+/* eslint-disabled */
+
 
 class Description extends React.PureComponent {
   fetchRes = async () => {
