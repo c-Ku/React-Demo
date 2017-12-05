@@ -1,12 +1,18 @@
 'use strict'
 
+const path = require('path')
 const React = require('react')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  devtool: 'source-map',
-  entry: __dirname + '/src/index.tsx',
+  devtool: false,                          // 使用 'source-map' 会生成map文件
+  entry: {
+    index: [
+      './src/index.tsx',
+    ],
+  },
   output: {
     path: __dirname + '/dist',
     publicPath: './',
@@ -14,7 +20,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.tsx', '.json', '.js', '.scss', '.css'],
+    extensions: ['.ts', '.tsx', '.json', '.js', '.less', '.scss', '.css'],
   },
 
   module: {
@@ -22,29 +28,26 @@ module.exports = {
       { test: /\.(ts|tsx)?$/, loader: 'awesome-typescript-loader' },
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       {
-        test: /\.(css|sass|scss)$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.(css|less)$/,
+        loaders: ['style-loader', 'css-loader', 'less-loader'],
       },
     ],
   },
 
   devServer: {
     port: 2333,
-    historyApiFallback: true,
     inline: true,
-    contentBase: './dist',
-  },
-
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
+    noInfo: true,
+    contentBase: path.join(__dirname, "dist"),
+    historyApiFallback: true,
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin(),
-    new webpack.ProvidePlugin({
-      React: 'react',
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      filename: 'index.html',
     }),
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin('[name]-[hash:3].css'),
   ],
 }

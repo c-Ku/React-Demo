@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { Hehe } from './components/Hehe'
+import { Hehe } from './components/Hehe/Hehe'
 
 ReactDOM.render(
   <Hehe compiler="TypeScript" framework="React" />,
