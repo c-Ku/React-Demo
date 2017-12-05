@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "2b5fd301a224e90e5271"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0b030c91d0f6a616b844"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1231,7 +1231,7 @@ exports = module.exports = __webpack_require__(31)(undefined);
 
 
 // module
-exports.push([module.i, ".Hehe h2 {\n  color: #9747e8;\n}\n.Hehe p {\n  text-indent: 2em;\n}\n.Hehe p span {\n  color: #FFF;\n}\n", ""]);
+exports.push([module.i, ".Hehe h2 {\n  color: #9747e8;\n}\n.Hehe p {\n  text-indent: 2em;\n}\n.Hehe p span {\n  color: #9747e8;\n}\n", ""]);
 
 // exports
 
