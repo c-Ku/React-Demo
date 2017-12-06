@@ -6,15 +6,16 @@ const initState = {
 export const formInfo = (state = initState, action) => {
   switch (action.type) {
     case 'FORM_SET':
-      state.name = action.name
-      state.phone = action.phone
-      break
+      return {
+        name: action.name,
+        phone: action.phone
+      }
     case 'FORM_CLEAN':
-      state.name = ''
-      state.phone = ''
-      break
+      return {
+        name: '',
+        phone: ''
+      }
     default:
       return state
   }
-  return state
 }
