@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  devtool: false,                          // 使用 'source-map' 会生成map文件
+  devtool: false,                         // 使用 'source-map' 会生成map文件
   entry: {
     index: [
       './src/index.tsx',
