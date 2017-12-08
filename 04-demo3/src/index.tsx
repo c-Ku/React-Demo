@@ -1,4 +1,3 @@
-import * as path from 'object-path'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import App from './Views/App'

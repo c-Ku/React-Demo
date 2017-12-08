@@ -1,0 +1,14 @@
+.viewshow-body {
+  width: 400px;
+  margin: auto;
+}
+
+.viewshow-body>div {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pt-control {
+  width: 120px;
+  margin: auto;
+}

@@ -1,29 +1,29 @@
 import * as React from 'react'
-import { Field, InjectedFormProps, reduxForm, WrappedFieldProps } from 'redux-form'
-
-interface TextFieldProps {
-  type: string;
-  placeholder: string;
-  disabled?: boolean;
-}
-
-const TextField = (props: TextFieldProps & WrappedFieldProps) => {
-  const { input, type, placeholder, disabled } = props
-  return <input type={type} placeholder={placeholder} disabled={disabled} {...input} />
-}
+import { DataPicker, TextField } from './Utils'
+import { Field, InjectedFormProps, reduxForm } from 'redux-form'
+import { mail, phone } from './Validate'
+import './Protect.css'
 
 class Form extends React.PureComponent<InjectedFormProps, {}> {
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} noValidate>
         <div>
           <label htmlFor="name">name</label>
           <Field name="name" component={TextField} type="text" />
         </div>
         <div>
           <label htmlFor="phone">phone</label>
-          <Field name="phone" component={TextField} type="text" />
+          <Field name="phone" validate={[phone]} component={TextField} type="text" />
+        </div>
+        <div>
+          <label htmlFor="mail">mail</label>
+          <Field name="mail" validate={[mail]} component={TextField} type="text" />
+        </div>
+        <div>
+          <label htmlFor="time">time</label>
+          <Field name="time" component={DataPicker} />
         </div>
         <button type="submit" disabled={submitting}>确认</button>
         <button type="button" disabled={pristine || submitting} onClick={reset}>清除</button>

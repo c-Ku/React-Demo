@@ -1,3 +1,4 @@
+import * as Blueprint from '@blueprintjs/core'
 import * as React from 'react'
 import Form from './Form'
 import { actions } from '../../Redux/Actions/'
@@ -8,38 +9,35 @@ import { Link } from 'react-router-dom'
 /* eslint-disabled */
 
 interface formDataTypes {
-  name?: string;
-  phone?: string;
+  name: string;
+  phone: string;
+  type: string;
 }
 
 class Protect extends React.PureComponent<any, {}> {
-
   submitAsync = (val: formDataTypes) => {
     const { formSet } = this.props
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        if(val.name === '王富贵' && val.phone === '17600695626') {
+        // if(val.name === '王富贵' && val.phone === '17600695626') {
+        if (val.name === '王富贵') {
           formSet(val)
           resolve('很好')
         } else {
           reject('呵呵')
         }
-      }, 3000)
+      }, 2000)
     })
   }
 
   onSubmit = (val: formDataTypes) => {
-    if (!!val.name && !!val.phone) {
-      this.submitAsync(val)
-        .then(data => {
-          console.log(data)
-        })
-        .catch(data => {
-          console.error('Error: ' + data)
-        })
-    } else {
-      console.log('Missing values...')
-    }
+    return this.submitAsync(val)
+      .then(data => {
+        console.log(data)
+      })
+      .catch(data => {
+        console.error('Error: ' + data)
+      })
   }
 
   render() {

@@ -5,6 +5,7 @@ import Main from '../Views/Main/Main'
 import NoMatch from '../Views/NoMatch'
 import Protect from '../Views/Check/Protect'
 import Thx from '../Views/Thx/Thx'
+import Viewshow from '../Views/Viewshow/Viewshow'
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 
 interface RouterRedrectProps {
@@ -36,6 +37,7 @@ class Routes extends React.PureComponent<any, {}> {
           <Route path="/check" component={Check} />
           <RouterRedrect path="/protect" test="true" to="/check" />
           <RouterRedrect path="/check" test={"false" || undefined} to="/protect" />
+          <Route path="/viewshow" component={Viewshow} />
           <Route component={NoMatch} />
         </Switch>
       </BrowserRouter>
